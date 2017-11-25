@@ -53,38 +53,25 @@ My model is based on nVidia Autonomous Car model as it was proven. My model has 
 
 Model summary is shown below.
 
-'''
-_________________________________________________________________
-Layer (type)                 Output Shape              Param 
-=================================================================
-lambda_1 (Lambda)            (None, 160, 320, 3)       0
-_________________________________________________________________
-cropping2d_1 (Cropping2D)    (None, 65, 320, 3)        0
-_________________________________________________________________
-conv2d_1 (Conv2D)            (None, 31, 158, 24)       1824
-_________________________________________________________________
-conv2d_2 (Conv2D)            (None, 14, 77, 36)        21636
-_________________________________________________________________
-conv2d_3 (Conv2D)            (None, 5, 37, 48)         43248
-_________________________________________________________________
-conv2d_4 (Conv2D)            (None, 3, 35, 64)         27712
-_________________________________________________________________
-conv2d_5 (Conv2D)            (None, 1, 33, 64)         36928
-_________________________________________________________________
-flatten_1 (Flatten)          (None, 2112)              0
-_________________________________________________________________
-dense_1 (Dense)              (None, 100)               211300
-_________________________________________________________________
-dense_2 (Dense)              (None, 50)                5050
-_________________________________________________________________
-dropout_1 (Dropout)          (None, 50)                0
-_________________________________________________________________
-dense_3 (Dense)              (None, 1)                 51
-=================================================================
+|Layer (type)                 |Output Shape              |Param  |
+|-----------------------------|--------------------------|-------|
+|lambda_1 (Lambda)            |(None, 160, 320, 3)       |0      |
+|cropping2d_1 (Cropping2D)    |(None, 65, 320, 3)        |0|
+|conv2d_1 (Conv2D)            |(None, 31, 158, 24)       |1824|
+|conv2d_2 (Conv2D)            |(None, 14, 77, 36)        |21636|
+|conv2d_3 (Conv2D)            |(None, 5, 37, 48)         |43248|
+|conv2d_4 (Conv2D)            |(None, 3, 35, 64)         |27712|
+|conv2d_5 (Conv2D)            |(None, 1, 33, 64)         |36928|
+|flatten_1 (Flatten)          |(None, 2112)              |0|
+|dense_1 (Dense)              |(None, 100)               |211300|
+|dense_2 (Dense)              |(None, 50)                |5050|
+|dropout_1 (Dropout)          |(None, 50)                |0|
+|dense_3 (Dense)              |(None, 1)                 |51|
+
 Total params: 347,749
 Trainable params: 347,749
 Non-trainable params: 0
-'''
+
 
 #### 2. Attempts to reduce overfitting in the model
 To avoid over fitting following strategies were followed. 
@@ -129,14 +116,14 @@ Dropout layer was added just before the final Fully Connected layer. Addition of
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
 
-####2. Final Model Architecture
+#### 2. Final Model Architecture
 
 The final model architecture (model.py lines 71-90) is visualized below.
 
 Here is a  of the architecture
 ![alt text][image1]
 
-####3. Creation of the Training Set & Training Process
+#### 3. Creation of the Training Set & Training Process
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
 
