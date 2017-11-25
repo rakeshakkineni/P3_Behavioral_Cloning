@@ -19,8 +19,8 @@ The goals / steps of this project are the following:
 [image3]: ./Pictures/Center_Lane_Anti_Clock.jpg "CenterLane Driving Anit Clockwise"
 [image4]: ./Pictures/Recovery_Left.jpg "Recovery Image"
 [image5]: ./Pictures/Recovery_Right.jpg "Recovery Image"
-[image6]: ./Pictures/placeholder_small.png "Normal Image"
-[image7]: ./Pictures/placeholder_small.png "Flipped Image"
+[image6]: ./Pictures/Forum_Suggestion.jpg "Normal Image"
+
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -106,6 +106,8 @@ and I have started using Center , Left and Right images. After these changes veh
 It was very difficult to find a way to make the vehicle cross the second turn without leaving the road. I knew there was no issue with the model and had to collect more data. I should have collected data for 10 times assuming that my driving was not proper, each time i was driving vehicle 5 laps each clockwise and anit clock wise direction and driving the vehicle near every turn for 5 times. I have increased the data size to around 100,000 images without any success. 
 I read a suggestion in Udacity by Kevin_La_Ra , shown below, to use recovery data and less number of images. 
 
+![alt text][image6]
+
 This suggestion has really helped me finishing the project. Taking his suggestion i have reduced the data size to 68,000 images and have included recovery images. Following drive cycles were followed to collect the data 
     - Clock Wise Laps : 2 Laps
     - Anti Clock Wise Laps :2 Laps
@@ -143,5 +145,7 @@ After the collection process, I had 68,000 images. 20% of the images were used a
 I have implemented a generator ([model.py lines 34-62](model.py#L34-L62)) to copy the images based on the information in driving_log.csv file. A correction factor of 0.2 was used for getting steering angle for Left and Right images.
 
 All the images were normalized and cropped before training or validation. Model was trained for 3 epochs and adam optimizer was used.
-
-The file ([Command_Prompt_Output.txt](Command_Prompt_Output.txt)) shows the command line output of the training process. Validation Loss was 0.0372 on the final epoch. 
+#### 4. Results
+- The file ([Command_Prompt_Output.txt](Command_Prompt_Output.txt)) shows the command line output of the training process. Validation Loss was 0.0372 on the final epoch. 
+- I checked for 3 laps and vehicle did not cross the road boundary. While running the simulator in autonomous mode , images from the vehicle were captured. Using video.py these images were converted to ([video](3Laps_Video.mp4))
+- Another video was captured using on screen video capture software , since the file size was too huge this video was limited to 1 lap. This video can found in the repository ([here](1Lap_Screen_Recording.mp4))
