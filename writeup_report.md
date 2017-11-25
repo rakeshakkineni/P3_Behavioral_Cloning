@@ -14,13 +14,13 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
+[image1]: ./Pictures/model.png "Model Visualization"
+[image2]: ./Pictures/Center_Lane_ClockWise.jpg "CenterLane Driving Clockwise"
+[image3]: ./Pictures/Center_Lane_Anti_Clock.jpg "CenterLane Driving Anit Clockwise"
+[image4]: ./Pictures/Recovery_Left.jpg "Recovery Image"
+[image5]: ./Pictures/Recovery_Right.jpg "Recovery Image"
+[image6]: ./Pictures/placeholder_small.png "Normal Image"
+[image7]: ./Pictures/placeholder_small.png "Flipped Image"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -49,7 +49,7 @@ The model.py file contains the code for training and saving the convolution neur
 ### Model Architecture and Training Strategy
 
 #### 1. An appropriate model architecture has been employed
-My model is based on nVidia Autonomous Car model as it was proven. My model has 5 Convolution Layers , 4 dense layers and a dropout layer before the final output layer. For all the convolution layers,'RELU' activation was used.
+My model is based on [nVidia Autonomous Car model](https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/) as it was proven. My model has 5 Convolution Layers , 4 dense layers and a dropout layer before the final output layer. For all the convolution layers,'RELU' activation was used.
 
 Model summary is shown below.
 
@@ -115,29 +115,24 @@ Dropout layer was added just before the final Fully Connected layer. Addition of
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
-
 #### 2. Final Model Architecture
 
 The final model architecture (model.py lines 71-90) is visualized below.
 
-Here is a  of the architecture
 ![alt text][image1]
 
 #### 3. Creation of the Training Set & Training Process
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
-
 ![alt text][image2]
 
 I then recorded two laps on track in anti clock wise direction. Here is an example image of center lane driving:
-
 ![alt text][image3]
 
 I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to comeback to the center lane even if it has crossed the road limits. These images show what a recovery looks like:
 
 ![alt text][image4]
 ![alt text][image5]
-![alt text][image6]
 
 I then recorded vehicle driving at each turn for 5 times.
 
