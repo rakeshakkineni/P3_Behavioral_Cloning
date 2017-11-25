@@ -144,4 +144,4 @@ I have implemented a generator ([model.py lines 34-62](model.py#L34-L62)) to cop
 
 All the images were normalized and cropped before training or validation. Model was trained for 3 epochs and adam optimizer was used.
 
-The file ([Command_Prompt_Output.txt]()) shows the command line output of the training process. Validation Loss was 0.0372 on the final epoch. 
+The file ([Command_Prompt_Output.txt](Command_Prompt_Output.txt)) shows the command line output of the training process. Validation Loss was 0.0372 on the final epoch. 
