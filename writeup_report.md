@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 [image3]: ./Pictures/Center_Lane_Anti_Clock.jpg "CenterLane Driving Anit Clockwise"
 [image4]: ./Pictures/Recovery_Left.jpg "Recovery Image"
 [image5]: ./Pictures/Recovery_Right.jpg "Recovery Image"
-[image6]: ./Pictures/Forum_Suggestion.jpg "Normal Image"
+[image6]: ./Pictures/Forum_Suggestion.JPG "Normal Image"
 
 
 ## Rubric Points
