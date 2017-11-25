@@ -18,4 +18,5 @@ Using video.py the output images , obtained during autonomous driving, were conv
 
 ## Project File:
 model.py : Designed model for behavioral cloning project.
-drive.py : This is from UDACITY
+
+drive.py : This is from UDACITY.
