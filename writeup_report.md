@@ -94,21 +94,22 @@ For details about how I created the training data, see the next section.
 ### Model Architecture and Training Strategy
 
 #### 1. Solution Design Approach
-I have started with [nVidia Autonomous Car model](https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/). nVidia model was modified accept the cropped images of size (320x65x3) and the last layer of the model was modified to generate one output.
+I have started with [nVidia Autonomous Car model](https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/). nVidia model was modified to accept cropped images of size (320x65x3) and the last layer of the model was modified to generate one output.
 
 I have captured one lap data by running the simulator in clock wise direction , these images were fed to the model. I saw that the vehicle was able to drive itself and was able to reach till first turn without crossing the road boundaries. Near the first turn vehicle fell into the pond on the first attempt, neverthless it was a good start. 
 
 After this i have have collected more data by driving vehicle 
   - In Clock-Wise and Anti-Clock Wise 3 laps each.
-  - Near the first turn for 3 times. 
+  - At first turn for 3 times. 
+  
 and I have started using Center , Left and Right images. After these changes vehicle was able to cross the first turn without any issue , but at the second turn it started going towards the mud path.
 
-It was very difficult to find a way to make the vehicle cross the second turn without leaving the road. I knew there was no issue with the model and had to collect more data. I should have collected data for 10 times assuming that my driving was not proper, each time i was driving vehicle 5 laps each clockwise and anit clock wise direction and driving the vehicle near every turn for 5 times. I have increased the data size to around 100,000 images without any success. 
+It was very difficult to find a way to make the vehicle cross the second turn without leaving the road. I knew there was no issue with the model and had to collect more data. I might have collected 10 different data set with assumption that my driving was not proper. Each data set was collected by driving vehicle 5 laps in clockwise and anit clock wise direction and then 5 times at every turn. I have increased the data size to around 100,000 images without any success. 
 I read a suggestion in Udacity by Kevin_La_Ra , shown below, to use recovery data and less number of images. 
 
 ![alt text][image6]
 
-This suggestion has really helped me finishing the project. Taking his suggestion i have reduced the data size to 68,000 images and have included recovery images. Following drive cycles were followed to collect the data 
+This suggestion has really helped me in finishing the project. Taking his suggestion i have reduced the data size to 68,000 images and have included recovery images. Following drive cycles were followed to collect the data 
     - Clock Wise Laps : 2 Laps
     - Anti Clock Wise Laps :2 Laps
     - Only Turns: 5 times at each turn
@@ -125,11 +126,11 @@ The final model architecture ([model.py lines 71-90](model.py#L71-L90)) is visua
 
 #### 3. Creation of the Training Set & Training Process
 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
+To capture good driving behavior, I first recorded two laps, on track one ,using center lane driving. Here is an example image of center lane driving:
 
 ![alt text][image2]
 
-I then recorded two laps on track in anti clock wise direction. Here is an example image of center lane driving:
+I then recorded two laps on track one in anti clock wise direction. Here is an example image of center lane driving:
 
 ![alt text][image3]
 
@@ -147,5 +148,5 @@ I have implemented a generator ([model.py lines 34-62](model.py#L34-L62)) to cop
 All the images were normalized and cropped before training or validation. Model was trained for 3 epochs and adam optimizer was used.
 #### 4. Results
 - The file ([Command_Prompt_Output.txt](Command_Prompt_Output.txt)) shows the command line output of the training process. Validation Loss was 0.0372 on the final epoch. 
-- I checked for 3 laps and vehicle did not cross the road boundary. While running the simulator in autonomous mode , images from the vehicle were captured. Using video.py these images were converted to ([video](3Laps_Video.mp4))
+- I checked for 3 laps and vehicle did not cross the road boundaries. While running the simulator in autonomous mode , images from the vehicle were captured. Using video.py these images were converted to ([video](3Laps_Video.mp4))
 - Another video was captured using on screen video capture software , since the file size was too huge this video was limited to 1 lap. This video can found in the repository ([here](1Lap_Screen_Recording.mp4))
