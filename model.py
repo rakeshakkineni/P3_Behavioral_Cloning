@@ -29,7 +29,6 @@ from sklearn.utils import shuffle
 # 3. Left and Right Steering angle is extracted by adding and substracting a 
 #    correction factor of 0.2
 # 4. Append the images and steering angle , shuffle and return.
-# 5. 
 
 def generator(samples, batch_size=32):
     num_samples = len(samples)
