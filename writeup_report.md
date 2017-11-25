@@ -76,14 +76,14 @@ Non-trainable params: 0
 #### 2. Attempts to reduce overfitting in the model
 To avoid over fitting following strategies were followed. 
 - Data was collected by driving the car equal number of laps in clockwise and anticlockwise direction
-- The model contains dropout layer in order to reduce overfitting (model.py lines 89). 
-- The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 15-17). 
+- The model contains dropout layer in order to reduce overfitting ([model.py lines 89](model.py#L89)). 
+- The model was trained and validated on different data sets to ensure that the model was not overfitting ([code line 15-17](model.py#L15-L17)). 
 - The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 - Number of training epochs were limited to 3.
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 95).
+The model used an adam optimizer, so the learning rate was not tuned manually ([model.py line 95](model.py#L95).).
 
 #### 4. Appropriate training data
 
@@ -117,7 +117,7 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 71-90) is visualized below.
+The final model architecture ([model.py lines 71-90](model.py#L71-L90)) is visualized below.
 
 ![alt text][image1]
 
@@ -140,8 +140,8 @@ I then recorded vehicle driving at each turn for 5 times.
 
 After the collection process, I had 68,000 images. 20% of the images were used as validation images.
 
-I have implemented a generator (model.py lines 34-62) to copy the images based on the information in driving_log.csv file. A correction factor of 0.2 was used for getting steering angle for Left and Right images.
+I have implemented a generator ([model.py lines 34-62](model.py#L34-L62)) to copy the images based on the information in driving_log.csv file. A correction factor of 0.2 was used for getting steering angle for Left and Right images.
 
 All the images were normalized and cropped before training or validation. Model was trained for 3 epochs and adam optimizer was used.
 
-The file (Command_Prompt_Output.txt) shows the command line output of the training process. Validation Loss was 0.0372 on the final epoch. 
+The file ([Command_Prompt_Output.txt]()) shows the command line output of the training process. Validation Loss was 0.0372 on the final epoch. 
