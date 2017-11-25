@@ -124,9 +124,11 @@ The final model architecture (model.py lines 71-90) is visualized below.
 #### 3. Creation of the Training Set & Training Process
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
+
 ![alt text][image2]
 
 I then recorded two laps on track in anti clock wise direction. Here is an example image of center lane driving:
+
 ![alt text][image3]
 
 I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to comeback to the center lane even if it has crossed the road limits. These images show what a recovery looks like:
