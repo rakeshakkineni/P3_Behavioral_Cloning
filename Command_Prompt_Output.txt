@@ -1,0 +1,61 @@
+(my_conda) C:\Users\Rakesh\Desktop\Self_Driving\Term1\P3\New>python model.py
+Using TensorFlow backend.
+2017-11-25 12:11:48.574251: W c:\l\work\tensorflow-1.1.0\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE instructions, but these are available on your machine and could speed up CPU computations.
+2017-11-25 12:11:48.574527: W c:\l\work\tensorflow-1.1.0\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-11-25 12:11:48.578621: W c:\l\work\tensorflow-1.1.0\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
+2017-11-25 12:11:48.581565: W c:\l\work\tensorflow-1.1.0\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-11-25 12:11:48.585131: W c:\l\work\tensorflow-1.1.0\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-11-25 12:11:48.588493: W c:\l\work\tensorflow-1.1.0\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-11-25 12:11:48.595434: W c:\l\work\tensorflow-1.1.0\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-11-25 12:11:48.598030: W c:\l\work\tensorflow-1.1.0\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-11-25 12:11:50.611139: I c:\l\work\tensorflow-1.1.0\tensorflow\core\common_runtime\gpu\gpu_device.cc:887] Found device 0 with properties:
+name: GeForce MX150
+major: 6 minor: 1 memoryClockRate (GHz) 1.5315
+pciBusID 0000:01:00.0
+Total memory: 2.00GiB
+Free memory: 1.65GiB
+2017-11-25 12:11:50.611271: I c:\l\work\tensorflow-1.1.0\tensorflow\core\common_runtime\gpu\gpu_device.cc:908] DMA: 0
+2017-11-25 12:11:50.614723: I c:\l\work\tensorflow-1.1.0\tensorflow\core\common_runtime\gpu\gpu_device.cc:918] 0:   Y
+2017-11-25 12:11:50.618997: I c:\l\work\tensorflow-1.1.0\tensorflow\core\common_runtime\gpu\gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce MX150, pci bus id: 0000:01:00.0)
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+lambda_1 (Lambda)            (None, 160, 320, 3)       0
+_________________________________________________________________
+cropping2d_1 (Cropping2D)    (None, 65, 320, 3)        0
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 31, 158, 24)       1824
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 14, 77, 36)        21636
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 5, 37, 48)         43248
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 3, 35, 64)         27712
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 1, 33, 64)         36928
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 2112)              0
+_________________________________________________________________
+dense_1 (Dense)              (None, 100)               211300
+_________________________________________________________________
+dense_2 (Dense)              (None, 50)                5050
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 50)                0
+_________________________________________________________________
+dense_3 (Dense)              (None, 1)                 51
+=================================================================
+Total params: 347,749
+Trainable params: 347,749
+Non-trainable params: 0
+_________________________________________________________________
+Classifier.py:80: UserWarning: The semantics of the Keras 2 argument `steps_per_epoch` is not the same as the Keras 1 argument `samples_per_epoch`. `steps_per_epoch` is the number of batches to draw from the generator at each epoch. Basically steps_per_epoch = samples_per_epoch/batch_size. Similarly `nb_val_samples`->`validation_steps` and `val_samples`->`steps` arguments have changed. Update your method calls accordingly.
+  model.fit_generator(train_generator,samples_per_epoch= len(train_samples),validation_data=validation_generator,nb_val_samples=len(validation_samples),nb_epoch=3)
+Classifier.py:80: UserWarning: Update your `fit_generator` call to the Keras 2 API: `fit_generator(<generator..., validation_data=<generator..., steps_per_epoch=18110, epochs=3, validation_steps=4528)`
+  model.fit_generator(train_generator,samples_per_epoch= len(train_samples),validation_data=validation_generator,nb_val_samples=len(validation_samples),nb_epoch=3)
+Epoch 1/3
+2017-11-25 12:11:58.225002: I c:\l\work\tensorflow-1.1.0\tensorflow\core\common_runtime\gpu\gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce MX150, pci bus id: 0000:01:00.0)
+18110/18110 [==============================] - 5842s 323ms/step - loss: 0.0193 - val_loss: 0.0390
+Epoch 2/3
+18110/18110 [==============================] - 5837s 322ms/step - loss: 0.0080 - val_loss: 0.0388
+Epoch 3/3
+18110/18110 [==============================] - 5839s 322ms/step - loss: 0.0062 - val_loss: 0.0372
